@@ -8,7 +8,7 @@
   
   -- Question 3 
   -- Display the first name and last name of customer in Uppercase
-  select upper(first_name) as FirstName, upper(last_name) as LastName from customer;
+  SELECT UPPER(first_name) AS uppercase_first_name, UPPER(last_name) AS uppercase_last_name FROM customer;
   
   -- Question 4
   -- Extract the month from the rental date and display it alongside the rental ID.
@@ -77,7 +77,7 @@ GROUP BY language.name;
 
   -- Question 11
   -- Retreive the customer names along with the total amount they've spent on rentals.
- SELECT 
+SELECT 
     customer.customer_id,
     customer.first_name,
     customer.last_name,
@@ -86,7 +86,9 @@ FROM
     customer
         JOIN
     payment ON customer.customer_id
-GROUP BY customer.customer_id , customer.first_name , customer.last_name;
+GROUP BY customer.customer_id , customer.first_name , customer.last_name
+ORDER BY customer_id ASC;
+
  
  
    -- Question 12 
